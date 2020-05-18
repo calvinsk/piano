@@ -1,5 +1,9 @@
 {
-    "tools|block": "工具",
-    "tools.areaOfRectangle|block": "長方形面積 長 %length|寬 %width",
-    "tools.ledOfRectangle|block": "LED顯示長方形面積 長 %length|寬 %width"
+  "piano.RGB_Program|block": "七彩灯",
+  "piano.RGB_Program_Close|block": "关闭七彩灯",  
+
+  "piano.Music_Handle|block": "音乐播放|%index",
+  "piano.Touch|block": "音乐触摸返回",
+  "piano.TouchButton|block" : "音乐按钮|%value",
+  "piano.PlayPiano|block" : "弹钢琴|音调 %value"
 }
