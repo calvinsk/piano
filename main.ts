@@ -143,8 +143,9 @@ namespace piano {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Music_Handle(index: Musictone): void {
         switch (index) {
-            case Musictone.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
+            
             case Musictone.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
+          case Musictone.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
             case Musictone.entertainer: music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once); break;
             case Musictone.prelude: music.beginMelody(music.builtInMelody(Melodies.Prelude), MelodyOptions.Once); break;
             case Musictone.ode: music.beginMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once); break;
