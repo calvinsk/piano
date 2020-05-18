@@ -1,10 +1,4 @@
-namespace piano {
-
-  
-    let yahStrip: neopixel.Strip;
-    
-    
-    export enum enMusic {
+ export enum enMusic {
 
         dadadum = 0,
         entertainer,
@@ -91,6 +85,15 @@ namespace piano {
         buf[1] = value; 
         pins.i2cWriteBuffer(addr, buf); 
     }  
+
+
+namespace piano {
+
+  
+    let yahStrip: neopixel.Strip;
+    
+    
+   
          
         
    
