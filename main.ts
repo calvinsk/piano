@@ -1,22 +1,6 @@
-//% color="#17ecc1" weight=20 icon="\uf001"
-namespace piano {
-
-  
-    let yahStrip: neopixel.Strip;
-    
-    export enum enMusic {
+export enum Musictone {
 
         dadadum = 0,
-        entertainer,
-        prelude,
-        ode,
-        nyan,
-        ringtone,
-        funk,
-        blues,
-
-        birthday,
-        wedding,
         funereal,
         punchline,
         baddy,
@@ -27,6 +11,17 @@ namespace piano {
         jump_down,
         power_up,
         power_down
+    
+        entertainer,
+        prelude,
+        ode,
+        nyan,
+        ringtone,
+        funk,
+        blues,
+        birthday,
+        wedding,
+      
     }
 
     export enum touch {
@@ -92,6 +87,16 @@ namespace piano {
         pins.i2cWriteBuffer(addr, buf); 
     }  
 
+
+
+
+//% color="#17ecc1" weight=20 icon="\uf001"
+namespace piano {
+
+  
+    let yahStrip: neopixel.Strip;
+    
+    
     
          
         
@@ -130,28 +135,47 @@ namespace piano {
     //% blockGap=10
     //% color="#17ecc1"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Music_Handle(index: enMusic): void {
+    export function Music_Handle(index: Musictone): void {
         switch (index) {
-            case enMusic.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
-            case enMusic.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
-            case enMusic.entertainer: music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once); break;
-            case enMusic.prelude: music.beginMelody(music.builtInMelody(Melodies.Prelude), MelodyOptions.Once); break;
-            case enMusic.ode: music.beginMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once); break;
-            case enMusic.nyan: music.beginMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.Once); break;
-            case enMusic.ringtone: music.beginMelody(music.builtInMelody(Melodies.Ringtone), MelodyOptions.Once); break;
-            case enMusic.funk: music.beginMelody(music.builtInMelody(Melodies.Funk), MelodyOptions.Once); break;
-            case enMusic.blues: music.beginMelody(music.builtInMelody(Melodies.Blues), MelodyOptions.Once); break;
-            case enMusic.wedding: music.beginMelody(music.builtInMelody(Melodies.Wedding), MelodyOptions.Once); break;
-            case enMusic.funereal: music.beginMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once); break;
-            case enMusic.punchline: music.beginMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.Once); break;
-            case enMusic.baddy: music.beginMelody(music.builtInMelody(Melodies.Baddy), MelodyOptions.Once); break;
-            case enMusic.chase: music.beginMelody(music.builtInMelody(Melodies.Chase), MelodyOptions.Once); break;
-            case enMusic.ba_ding: music.beginMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once); break;
-            case enMusic.wawawawaa: music.beginMelody(music.builtInMelody(Melodies.Wawawawaa), MelodyOptions.Once); break;
-            case enMusic.jump_up: music.beginMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once); break;
-            case enMusic.jump_down: music.beginMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.Once); break;
-            case enMusic.power_up: music.beginMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once); break;
-            case enMusic.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
+            case Musictone.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
+            
+            case Musictone.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
+            
+            case Musictone.entertainer: music.beginMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once);break;
+            
+            case Musictone.prelude: music.beginMelody(music.builtInMelody(Melodies.Prelude), MelodyOptions.Once); break;
+            
+            case Musictone.ode: music.beginMelody(music.builtInMelody(Melodies.Ode), MelodyOptions.Once); break;
+            
+            case Musictone.nyan: music.beginMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.Once); break;
+            
+            case Musictone.ringtone: music.beginMelody(music.builtInMelody(Melodies.Ringtone), MelodyOptions.Once); break;
+            
+            case Musictone.funk: music.beginMelody(music.builtInMelody(Melodies.Funk), MelodyOptions.Once); break;
+            
+            case Musictone.blues: music.beginMelody(music.builtInMelody(Melodies.Blues), MelodyOptions.Once); break;
+            
+            case Musictone.wedding: music.beginMelody(music.builtInMelody(Melodies.Wedding), MelodyOptions.Once); break;
+            
+            case Musictone.funereal: music.beginMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once); break;
+            
+            case Musictone.punchline: music.beginMelody(music.builtInMelody(Melodies.Punchline), MelodyOptions.Once); break;
+            
+            case Musictone.baddy: music.beginMelody(music.builtInMelody(Melodies.Baddy), MelodyOptions.Once); break;
+            
+            case Musictone.chase: music.beginMelody(music.builtInMelody(Melodies.Chase), MelodyOptions.Once); break;
+            
+            case Musictone.ba_ding: music.beginMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once); break;
+            
+            case Musictone.wawawawaa: music.beginMelody(music.builtInMelody(Melodies.Wawawawaa), MelodyOptions.Once); break;
+            
+            case Musictone.jump_up: music.beginMelody(music.builtInMelody(Melodies.JumpUp), MelodyOptions.Once); break;
+            
+            case Musictone.jump_down: music.beginMelody(music.builtInMelody(Melodies.JumpDown), MelodyOptions.Once); break;
+            
+            case Musictone.power_up: music.beginMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once); break;
+            
+            case Musictone.power_down: music.beginMelody(music.builtInMelody(Melodies.PowerDown), MelodyOptions.Once); break;
         }
     }
     
