@@ -136,11 +136,18 @@ namespace piano {
         piano.RGB_Program().show();
     }
     
+ 
+ 
+  /**
+     * index.fieldEditor
+     * @param index eg:birthday
+     */
+ 
     //% blockId=piano_Music_Handle block="Music_Handle|%index"
     //% weight=98
     //% blockGap=10
     //% color="#17ecc1"
-    //% index.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% index.fieldEditor="gridpicker" index.fieldOptions.columns=4
     export function Music_Handle(index: Musictone): void {
         switch (index) {
             
