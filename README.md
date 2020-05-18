@@ -12,5 +12,5 @@ MIT
 (The metadata above is needed for package search.)
 
 ```package
-tools=github:calvinsk/pxt-toolss
+tools=github:calvinsk/piano
 ```
