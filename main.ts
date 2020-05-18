@@ -1,11 +1,4 @@
-  //% color="#17ecc1" weight=20 icon="\uf001"
-namespace piano {
-
-  
-    let yahStrip: neopixel.Strip;
-    
-    
-    export enum enMusic {
+export enum enMusic {
 
         dadadum = 0,
         entertainer,
@@ -92,6 +85,16 @@ namespace piano {
         buf[1] = value; 
         pins.i2cWriteBuffer(addr, buf); 
     }  
+
+
+//% color="#17ecc1" weight=20 icon="\uf001"
+namespace piano {
+
+  
+    let yahStrip: neopixel.Strip;
+    
+    
+    
          
         
    
