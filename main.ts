@@ -140,7 +140,7 @@ namespace piano {
     //% weight=98
     //% blockGap=10
     //% color="#17ecc1"
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+    //% index.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function Music_Handle(index: Musictone): void {
         switch (index) {
             
