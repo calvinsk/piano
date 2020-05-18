@@ -13,9 +13,6 @@
         "_locales/zh/tools-strings.json"
 
     ],
-    "testFiles": [
-        "test.ts"
-    ],
+   
     "public": true
 }
-© 2020 GitHub, Inc.
