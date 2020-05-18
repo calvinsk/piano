@@ -27,7 +27,7 @@
     export enum touch {
         //% blockId="None" block="None"
         None = 0x0000,
-        //%  blockId="ggg" block="C"
+        //%  blockId="ggg" "show|number %v"
         C = 0x0004,
         //%  blockId="ggg" block="CD"
         CD = 0x0008,
