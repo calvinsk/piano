@@ -21,27 +21,33 @@ export enum enColor {
 
 export enum Musictone {
 
-        dadadum = 0,
-        entertainer,
-        prelude,
-        ode,
-        nyan,
-        ringtone,
-        funk,
-        blues,
-
-        birthday,
-        wedding,
-        funereal,
-        punchline,
+        ba_ding=0,
         baddy,
+        birthday,
+        blues,
         chase,
-        ba_ding,
-        wawawawaa,
+        dadadum,
+        entertainer,
+        funk,
+        funereal,
         jump_up,
         jump_down,
+        ringtone,
         power_up,
-        power_down
+        power_down,
+        prelude,
+        punchline,
+        ode,
+        nyan,     
+        wawawawaa,
+        wedding
+       
+       
+        
+       
+        
+       
+       
     }
 
     export enum touch {
