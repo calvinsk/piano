@@ -1,3 +1,11 @@
+/*
+Copyright (C): 2010-2019, Shenzhen Yahboom Tech
+modified from liusen
+load dependency
+"piano": "file:../pxt-piano"  
+*/
+
+//% color="#17ecc1" weight=20 icon="\uf001"
 namespace piano {
 
   
