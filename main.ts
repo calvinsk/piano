@@ -21,7 +21,7 @@ export enum enColor {
 
 export enum Musictone {
 
-        ba_ding=0,
+        ba_ding,
         baddy,
         birthday,
         blues,
