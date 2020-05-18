@@ -1,15 +1,21 @@
 {
-    "name": "tools",
-    "version": "0.0.1",
-    "description": "這是專為測試用的micro:bit積木",
+    "name": "piano",
+    "version": "2.0.0",
+    "description": "Extension for YahBoom YB_Piano V2.0.0",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "neopixel": "github:lzty634158/pxt-neopixel"
     },
     "files": [
         "README.md",
         "main.ts",
         "_locales/zh/tools-strings.json"
+
+    ],
+    "testFiles": [
+        "test.ts"
     ],
     "public": true
 }
+© 2020 GitHub, Inc.
