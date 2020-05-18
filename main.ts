@@ -138,10 +138,6 @@ namespace piano {
     
  
  
-  /**
-     * index.fieldEditor
-     * @param index eg:birthday
-     */
  
     //% blockId=piano_Music_Handle block="Music_Handle|%index"
     //% weight=98
