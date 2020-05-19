@@ -132,12 +132,12 @@ namespace piano {
         piano.RGB_Program().show();
     }
     
-    //% blockId=piano_Music_Handle block="Music_Handle|%index"
+    //% blockId=piano_Musicbeat block="Musicbeat|%index"
     //% weight=98
     //% blockGap=10
     //% color="#17ecc1"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function Music_Handle(index: musictone): void {
+    export function Musicbeat(index: musictone): void {
         switch (index) {
             case musictone.dadadum: music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once); break;
             case musictone.birthday: music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once); break;
