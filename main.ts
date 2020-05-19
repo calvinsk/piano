@@ -6,24 +6,16 @@ load dependency
 "piano": "file:../pxt-piano"  
 */
 
-//% color="#17ecc1" weight=20 icon="\uf001"
-namespace piano {
+//% color="#F1C40F" weight=20 icon="\uf001"
+namespace piano_keypad {
 
   
-    let yahStrip: neopixel.Strip;
+    let Strip: neopixel.Strip;
     
     
     export enum musictone {
 
         dadadum = 0,
-        entertainer,
-        prelude,
-        ode,
-        nyan,
-        ringtone,
-        funk,
-        blues,
-
         birthday,
         wedding,
         funereal,
@@ -35,33 +27,40 @@ namespace piano {
         jump_up,
         jump_down,
         power_up,
-        power_down
+        power_down,
+        entertainer,
+        prelude,
+        ode,
+        nyan,
+        ringtone,
+        funk,
+        blues
     }
 
-    export enum touch {
+    export enum note {
         //% blockId="None" block="None"
         None = 0x0000,
         //% blockId="C" block="C"
         C = 0x0004,
-        //% blockId="CD" block="CD"
+        //% blockId="C#" block="C#"
         CD = 0x0008,
         //% blockId="D" block="D"
         D = 0x0010,
-        //% blockId="DE" block="DE"
+        //% blockId="D#" block="D#"
         DE = 0x0020,
         //% blockId="E" block="E"
         E = 0x0040,
         //% blockId="F" block="F"
         F = 0x0080,
-        //% blockId="FG" block="FG"
+        //% blockId="F#" block="F#"
         FG = 0x0100,
         //% blockId="G" block="G"
         G = 0x0200,
-        //% blockId="GA" block="GA"
+        //% blockId="G#" block="G#"
         GA = 0x0400,
         //% blockId="A" block="A"
         A = 0x0800,
-        //% blockId="AB" block="AB"
+        //% blockId="A#" block="A#"
         AB = 0x1000,
         //% blockId="B" block="B"
         B = 0x2000, 
@@ -74,7 +73,7 @@ namespace piano {
        
     }
     
-    export enum enColor {
+    export enum colour {
         //% blockId="OFF" block="OFF"
         OFF = 0,
         //% blockId="RED" block="RED"
@@ -115,10 +114,10 @@ namespace piano {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
     export function RGB_Program(): neopixel.Strip {
          
-        if (!yahStrip) {
-            yahStrip = neopixel.create(DigitalPin.P1, 3, NeoPixelMode.RGB);
+        if (!Strip) {
+            Strip = neopixel.create(DigitalPin.P1, 3, NeoPixelMode.RGB);
         }
-        return yahStrip;  
+        return Strip;  
     }  
        
     //% blockId=piano_RGB_Program_Close block="RGB_Program_Close"
@@ -128,8 +127,8 @@ namespace piano {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=12
     export function RGB_Program_Close(): void {
         pins.digitalWritePin(DigitalPin.P1, 0);
-        piano.RGB_Program().clear();
-        piano.RGB_Program().show();
+        piano_keypad.RGB_Program().clear();
+        piano_keypad.RGB_Program().show();
     }
     
     //% blockId=piano_Musicbeat block="Musicbeat|%index"
@@ -183,7 +182,7 @@ namespace piano {
     //% blockGap=10
     //% color="#17ecc1"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=6
-    export function TouchButton(value: touch): number {
+    export function TouchButton(value: note): number {
        
         let c = value;
         return c;
@@ -207,31 +206,31 @@ namespace piano {
         if (value == 1) { 
             if ((c & temp) != 0) {
                 c = c & temp;
-            } else if (c & touch.C) {
+            } else if (c & note.C) {
                 music.ringTone(131);
-            } else if (c & touch.CD) {
+            } else if (c & note.CD) {
                 music.ringTone(139);
-            } else if (c & touch.D) {
+            } else if (c & note.D) {
                 music.ringTone(147);
-            } else if (c & touch.DE) {
+            } else if (c & note.DE) {
                 music.ringTone(156);
-            } else if (c & touch.E) {
+            } else if (c & note.E) {
                 music.ringTone(165);
-            } else if (c & touch.F) {
+            } else if (c & note.F) {
                 music.ringTone(175);
-            } else if (c & touch.FG) {
+            } else if (c & note.FG) {
                 music.ringTone(185);
-            } else if (c & touch.G) {
+            } else if (c & note.G) {
                 music.ringTone(196);
-            } else if (c & touch.GA) {
+            } else if (c & note.GA) {
                 music.ringTone(208);
-            } else if (c & touch.A) {
+            } else if (c & note.A) {
                 music.ringTone(220);
-            } else if (c & touch.AB) {
+            } else if (c & note.AB) {
                 music.ringTone(233);
-            } else if (c & touch.B) {
+            } else if (c & note.B) {
                 music.ringTone(247);
-            } else if (c == touch.None) {
+            } else if (c == note.None) {
                 //music.ringTone(0);
                 pins.digitalWritePin(DigitalPin.P0, 0);
             }
@@ -239,31 +238,31 @@ namespace piano {
         else  if (value == 2) { 
             if ((c & temp) != 0) {
                 c = c & temp;
-            } else if (c & touch.C) {
+            } else if (c & note.C) {
                 music.ringTone(262);
-            } else if (c & touch.CD) {
+            } else if (c & note.CD) {
                 music.ringTone(277);
-            } else if (c & touch.D) {
+            } else if (c & note.D) {
                 music.ringTone(294);
-            } else if (c & touch.DE) {
+            } else if (c & note.DE) {
                 music.ringTone(311);
-            } else if (c & touch.E) {
+            } else if (c & note.E) {
                 music.ringTone(330);
-            } else if (c & touch.F) {
+            } else if (c & note.F) {
                 music.ringTone(349);
-            } else if (c & touch.FG) {
+            } else if (c & note.FG) {
                 music.ringTone(370);
-            } else if (c & touch.G) {
+            } else if (c & note.G) {
                 music.ringTone(392);
-            } else if (c & touch.GA) {
+            } else if (c & note.GA) {
                 music.ringTone(415);
-            } else if (c & touch.A) {
+            } else if (c & note.A) {
                 music.ringTone(440);
-            } else if (c & touch.AB) {
+            } else if (c & note.AB) {
                 music.ringTone(466);
-            } else if (c & touch.B) {
+            } else if (c & note.B) {
                 music.ringTone(494);
-            } else if (c == touch.None) {
+            } else if (c == note.None) {
                 //music.ringTone(0);
                 pins.digitalWritePin(DigitalPin.P0, 0);
             }
@@ -271,31 +270,31 @@ namespace piano {
         else  if (value == 3) { 
             if ((c & temp) != 0) {
                 c = c & temp;
-            } else if (c & touch.C) {
+            } else if (c & note.C) {
                 music.ringTone(523);
-            } else if (c & touch.CD) {
+            } else if (c & note.CD) {
                 music.ringTone(554);
-            } else if (c & touch.D) {
+            } else if (c & note.D) {
                 music.ringTone(587);
-            } else if (c & touch.DE) {
+            } else if (c & note.DE) {
                 music.ringTone(622);
-            } else if (c & touch.E) {
+            } else if (c & note.E) {
                 music.ringTone(659);
-            } else if (c & touch.F) {
+            } else if (c & note.F) {
                 music.ringTone(698);
-            } else if (c & touch.FG) {
+            } else if (c & note.FG) {
                 music.ringTone(740);
-            } else if (c & touch.G) {
+            } else if (c & note.G) {
                 music.ringTone(784);
-            } else if (c & touch.GA) {
+            } else if (c & note.GA) {
                 music.ringTone(831);
-            } else if (c & touch.A) {
+            } else if (c & note.A) {
                 music.ringTone(880);
-            } else if (c & touch.AB) {
+            } else if (c & note.AB) {
                 music.ringTone(932);
-            } else if (c & touch.B) {
+            } else if (c & note.B) {
                 music.ringTone(988);
-            } else if (c == touch.None) {
+            } else if (c == note.None) {
                 //music.ringTone(0);
                 pins.digitalWritePin(DigitalPin.P0, 0);
             }
